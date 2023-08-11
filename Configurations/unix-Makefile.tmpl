@@ -378,9 +378,9 @@ MAKEDEPEND={- $config{makedepcmd} -}
 
 PERL={- $config{PERL} -}
 
-AR=$(CROSS_COMPILE){- $config{AR} -}
+AR={- $config{AR} -}
 ARFLAGS= {- join(' ', @{$config{ARFLAGS}}) -}
-RANLIB={- $config{RANLIB} ? "\$(CROSS_COMPILE)$config{RANLIB}" : "true"; -}
+RANLIB={- $config{RANLIB} ? "$config{RANLIB}" : "true"; -}
 RC= $(CROSS_COMPILE){- $config{RC} -}
 RCFLAGS={- join(' ', @{$config{RCFLAGS}}) -} {- $target{shared_rcflag} -}
 
