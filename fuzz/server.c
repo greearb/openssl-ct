@@ -486,7 +486,9 @@ static int idx;
  * different coverage.
  */
 #if !defined(_WIN32)
+#if !defined(__ANDROID__)
 time_t time(time_t *t) TIME_IMPL(t)
+#endif
 #endif
 
 int FuzzerInitialize(int *argc, char ***argv)
